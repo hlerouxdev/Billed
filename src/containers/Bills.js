@@ -29,12 +29,14 @@ export default class {
 
   getBills = () => {
     if (this.store) {
+      console.log('store', this.store.bills);
       return this.store
       .bills()
       .list()
       .then(snapshot => {
         const bills = snapshot
           .map(doc => {
+            console.log('doc', doc);
             try {
               return {
                 ...doc,
@@ -53,6 +55,7 @@ export default class {
             }
           })
           console.log('length', bills.length)
+          console.log('returned array', bills);
         return bills
       })
     }
