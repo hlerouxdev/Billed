@@ -5,7 +5,6 @@ import LoadingPage from "./LoadingPage.js"
 import Actions from './Actions.js'
 
 const row = (bill) => {
-  console.log("logged bill", bill);
   return (`
     <tr>
       <td>${bill.type}</td>
@@ -21,7 +20,6 @@ const row = (bill) => {
   }
 
 const rows = (data) => {
-  console.log("logged data", data);
   return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
 }
 
@@ -49,7 +47,6 @@ export default ({ data: bills, loading, error }) => {
   } else if (error) {
     return ErrorPage(error)
   }
-  console.log("bills at return", bills);
   return (`
     <div class='layout'>
       ${VerticalLayout(120)}

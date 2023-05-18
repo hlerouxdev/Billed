@@ -36,7 +36,6 @@ export default class {
       .then(snapshot => {
         const bills = snapshot
           .map(doc => {
-            console.log('doc', doc);
             try {
               return {
                 ...doc,
@@ -54,8 +53,6 @@ export default class {
               }
             }
           })
-          console.log('length', bills.length)
-          console.log('returned array', bills);
         return bills
       })
     }
