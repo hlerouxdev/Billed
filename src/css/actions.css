@@ -2,6 +2,10 @@
   cursor: pointer;
 }
 
+#eye-grey {
+  filter: saturate(0.0);
+}
+
 #download {
   cursor: pointer;
 }

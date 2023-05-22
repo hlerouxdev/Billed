@@ -20,6 +20,9 @@ const row = (bill) => {
   }
 
 const rows = (data) => {
+  data.forEach(item => {
+    console.log(item.date);
+  });
   return (data && data.length) ? data.map(bill => row(bill)).join("") : ""
 }
 

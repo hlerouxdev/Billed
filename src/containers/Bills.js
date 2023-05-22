@@ -34,8 +34,14 @@ export default class {
       .bills()
       .list()
       .then(snapshot => {
-        const bills = snapshot
+        console.log('snapshot', snapshot);
+        console.log('type of bills', typeof(snapshot));
+          console.log('unsorted bills', snapshot);
+          const sorted = snapshot.sort( (a,b) => new Date(b.date) - new Date(a.date))
+          console.log('sorted bills', sorted);
+        const bills = sorted
           .map(doc => {
+            console.log(('doc', doc));
             try {
               return {
                 ...doc,
