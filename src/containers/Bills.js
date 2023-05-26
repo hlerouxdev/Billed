@@ -29,14 +29,12 @@ export default class {
 
   getBills = () => {
     if (this.store) {
-      console.log('store', this.store.bills);
       return this.store
       .bills()
       .list()
       .then(snapshot => {
         const bills = snapshot
           .map(doc => {
-            console.log(('doc', doc));
             try {
               return {
                 ...doc,
@@ -46,7 +44,6 @@ export default class {
             } catch(e) {
               // if for some reason, corrupted data was introduced, we manage here failing formatDate function
               // log the error and return unformatted date in that case
-              console.log(e,'for',doc)
               return {
                 ...doc,
                 date: doc.date,
